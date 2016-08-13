@@ -2535,6 +2535,10 @@ public class RIL extends BaseCommands implements CommandsInterface {
         return state;
     }
 
+    protected int convertRadioState(int paramInt){
+        return paramInt > 1 && paramInt < 10 ? 10 : paramInt;
+    }
+
     protected void switchToRadioState(RadioState newState) {
         setRadioState(newState);
     }
