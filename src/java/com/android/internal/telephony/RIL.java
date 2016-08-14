@@ -2513,7 +2513,7 @@ public class RIL extends BaseCommands implements CommandsInterface {
 
     protected RadioState getRadioStateFromInt(int stateInt) {
         RadioState state;
-
+        int stateIntNormalized = convertRadioState(stateInt);
         /* RIL_RadioState ril.h */
         switch(stateIntNormalized) {
             case 0: state = RadioState.RADIO_OFF; break;
