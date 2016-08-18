@@ -32,7 +32,7 @@ import android.telephony.Rlog;
 import android.telephony.SignalStrength;
 
 import com.android.internal.telephony.uicc.IccIoResult;
-import com.android.internal.telephony.dataconnection.ApnProfileOmh;
+//import com.android.internal.telephony.dataconnection.ApnProfileOmh;
 import com.android.internal.telephony.dataconnection.ApnSetting;
 import com.android.internal.telephony.dataconnection.DataProfile;
 
@@ -641,7 +641,7 @@ public class HuaweiRIL extends RIL implements CommandsInterface {
         return signalStrength;
     }
     
-    protected ArrayList<ApnSetting> responseGetDataCallProfile(Parcel p) {
+/*    protected ArrayList<ApnSetting> responseGetDataCallProfile(Parcel p) {
         int nProfiles = p.readInt();
         if (RILJ_LOGD) riljLog("# data call profiles:" + nProfiles);
 
@@ -662,7 +662,7 @@ public class HuaweiRIL extends RIL implements CommandsInterface {
 
         return response;
     }
-    
+*/    
    protected Object
    responseHardwareConfig(Parcel p) {
       int num;
