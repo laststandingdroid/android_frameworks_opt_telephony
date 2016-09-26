@@ -554,11 +554,11 @@ public class HuaweiRIL extends RIL implements CommandsInterface {
 
         if (lteRsrp != 0) // LTE
         {
-            if (lteRsrp > -20) lteSignalStrength = 64; // None or Unknown
-            else if (lteRsrp >= -97) lteSignalStrength = 63; // Great
-            else if (lteRsrp >= -105) lteSignalStrength = 11; // Good
-            else if (lteRsrp >= -113) lteSignalStrength = 7; // Moderate
-            else if (lteRsrp >= -120) lteSignalStrength = 4; // Poor
+            if (lteRsrp > -44) lteSignalStrength = 64; // None or Unknown
+            else if (lteRsrp >= -85) lteSignalStrength = 63; // Great
+            else if (lteRsrp >= -95) lteSignalStrength = 11; // Good
+            else if (lteRsrp >= -105) lteSignalStrength = 7; // Moderate
+            else if (lteRsrp >= -115) lteSignalStrength = 4; // Poor
             else if (lteRsrp >= -140) lteSignalStrength = 64; // None or Unknown
         }
         else if (gsmSignalStrength == 0 && lteRsrp == 0) // 3G
@@ -566,22 +566,22 @@ public class HuaweiRIL extends RIL implements CommandsInterface {
             lteRsrp = (mWcdmaRscp & 0xFF) - 256;
             lteRsrq = (mWcdmaEcio & 0xFF) - 256;
 
-            if (lteRsrp > -20) { // None or Unknown
+            if (lteRsrp > 0) { // None or Unknown
                 lteSignalStrength = 64;
                 lteRssnr = -200;
-            } else if (lteRsrp >= -97) { // Great
+            } else if (lteRsrp >= -89) { // Great
                 lteSignalStrength = 63;
                 lteRssnr = 300;
-            } else if (lteRsrp >= -105) { // Good
+            } else if (lteRsrp >= -97) { // Good
                 lteSignalStrength = 11;
                 lteRssnr = 129;
-            } else if (lteRsrp >= -113) { // Moderate
+            } else if (lteRsrp >= -103) { // Moderate
                 lteSignalStrength = 7;
                 lteRssnr = 44;
-            } else if (lteRsrp >= -120) { // Poor
+            } else if (lteRsrp >= -109) { // Poor
                 lteSignalStrength = 4;
                 lteRssnr = 9;
-            } else if (lteRsrp >= -140) { // None or Unknown
+            } else if (lteRsrp >= 99) { // None or Unknown
                 lteSignalStrength = 64;
                 lteRssnr = -200;
             }
@@ -590,23 +590,23 @@ public class HuaweiRIL extends RIL implements CommandsInterface {
         {         
             lteRsrp = (gsmSignalStrength & 0xFF) - 256;
 
-            if (lteRsrp > -20) { // None or Unknown
+            if (lteRsrp > 0) { // None or Unknown
                 lteSignalStrength = 64;
                 lteRsrq = -21;
                 lteRssnr = -200;
-            } else if (lteRsrp >= -97) { // Great
+            } else if (lteRsrp >= -91) { // Great
                 lteSignalStrength = 63;
                 lteRsrq = -3;
                 lteRssnr = 300;
-            } else if (lteRsrp >= -105) { // Good
+            } else if (lteRsrp >= -98) { // Good
                 lteSignalStrength = 11;
                 lteRsrq = -7;
                 lteRssnr = 129;
-            } else if (lteRsrp >= -113) { // Moderate
+            } else if (lteRsrp >= -105) { // Moderate
                 lteSignalStrength = 7;
                 lteRsrq = -12;
                 lteRssnr = 44;
-            } else if (lteRsrp >= -120) { // Poor
+            } else if (lteRsrp >= -112) { // Poor
                 lteSignalStrength = 4;
                 lteRsrq = -17;
                 lteRssnr = 9;
